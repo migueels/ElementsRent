@@ -180,7 +180,7 @@ input[type="password"]{
                            <li><a href="#">TV, Audio & Imagen</a></li> 
                          </ul>
                        </li>
-                     <li><a href="#">Contacto</a></li>
+                     <li><a href="Contacto.html">Contacto</a></li>
                      <li><a href="NuevoProducto.php">+ Producto</a></li>
              
                      

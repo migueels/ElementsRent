@@ -207,7 +207,7 @@ color:rgba(20, 1, 1, 0.3);
                            <li><a href="#">TV, Audio & Imagen</a></li> 
                          </ul>
                        </li>
-                     <li><a href="NuevoProducto.php">Contacto</a></li>
+                     <li><a href="Contacto.html">Contacto</a></li>
                      <li><a href="NuevoProducto.php">+ Producto</a></li>
         
                      
