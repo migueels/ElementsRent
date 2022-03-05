@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme The Band</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  h3,h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #115;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 100px;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 25px;
+  }
+  .container {
+    padding: 80px 120px;
+  }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); /* make all photos black and white */ 
+    width: 70%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+    background: #ffffff;
+    color: #000000;
+  }
+  .bg-1 h3 {color: rgb(0, 0, 0);}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: #555;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+  }
+  .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .nav-tabs li a {
+    color: #777;
+  }
+  #googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }  
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2bb8b1;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: #000000 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: rgb(38, 194, 160) !important;
+    background-color: #4b4b9c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: rgb(32, 141, 214) !important;
+  }
+  .site-footer{
+  padding:4em 0;
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  color:rgba(2, 0, 0, 0.5);
+  position:relative;
+}
+
+.site-footer:before{
+  position:absolute;
+  content:"";
+  background:rgba(43, 184, 177);
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.site-footer .footer-heading{
+  font-size:20px;
+}
+
+.site-footer a
+{
+color:rgba(20, 1, 1, 0.3);
+}
+.site-footer a:hover{
+  color:#fff;
+}
+.site-footer ul li{
+  margin-bottom:10px;
+}
+.form-control {
+  border-radius: 0;
+}
+textarea {
+  resize: none;
+}
+.site-section{
+  padding:3em 0;
+}
+@media (min-width:768px){
+.site-section{
+   padding:7em 0;}}
+.site-section.site-section-sm{
+   padding:4em 0;}
+
+  </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#myPage"><img src="img/logo.png" width="100px" align="left"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#myPage">Inicio</a></li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Eletronica</a></li>
+                    <li><a href="#">Contrucción y obras</a></li>
+                    <li><a href="#">TV, Audio & Imagen</a></li> 
+                  </ul>
+                </li>
+              <li><a href="#">Contacto</a></li>
+              <li><a href="#">+ Producto</a></li>
+              
+              <li><a href="#"><span class="glyphicon glyphicon-shopping-cart logo-small"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="site-section site-section-sm">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12 col-lg-8 mb-5">
+                 <form action="#" class="p-5 bg-white">
+                    <div class="row form-group">
+                       <div class="col-md-12 mb-3 mb-md-0">
+                 <form name="formulario" method="post" class="p-5 bg-white" action="">
+                      <div class="row form-group">
+                           <div class="col-md-12 mb-3 mb-md-0">
+                                <label class="font-weight-bold" for="fullname">Categoria producto</label>
+                                <!-- Nombre. Campo obligatorio, máximo 30 carácteres --> 
+                                <!-- <input type="text" class="form-control" placeholder="Categoria" name="categoria" id="category" maxlength="30" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required> 
+                                -->
+                                <select name="newproducto" id="newproducto">
+                                    <option value="1">Electrónica</option>
+                                    <option value="2">Construcción & Obras</option>
+                                    <option value="3">TV, Audio & Imagen</option>
+                                </select>
+                            </div>
+                     </div> 
+                     <div class="row form-group">
+                             <div class="col-md-12 mb-3 mb-md-0">
+                                  <label class="font-weight-bold" id="usuario" for="usuario">Nombre producto</label>
+                                <!-- Nombre de usuario. Campo obligatorio, entre 5-20 carácteres -->
+                                  <input type="text" class="form-control" placeholder="producto" name="producto" id="product" minlength="5" maxlength="20" required> 
+                             </div>
+                     </div> 
+                     <div class="row form-group">
+                              <div class="col-md-12">
+                                   <label class="font-weight-bold" id="precio" for="text">Precio/dia </label>
+                                    <!-- Email. Campo obligatorio --> <input type="text" class="form-control" placeholder="Precio por dia" name="precio"  pattern=".+@[gG][mM][aA][iI][lL][.][cC][oO][mM]" title="Solo acepta cuentas gmail">
+                              </div>
+                     </div>
+                        
+                    <label class="font-weight-bold" for="message">Descripción producto</label> <div id="info">Máximo 300 caracteres</div> <textarea id="texto" onkeypress="return limita(event, 100);" onkeyup="actualizaInfo(100)" rows="6" cols="30" name="descripcion" id="message" class="form-control"></textarea> 
+                </div> 
+             
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="imagen">Imagen</label>
+                            <div class="upimg">
+                               <input type="file" name="foto" id=""foto>
+                            </div>
+                            <div id="form_alert"></div>
+                        </div>
+
+                        </div>
+                        
+                    
+                    
+                    <div class="row form-group"> 
+                     <div class="col-md-12"> 
+                         <input type="submit" value="Subir producto" class="btn btn-primary pill text-white px-5 py-2"> 
+                    </div>
+                 </div>
+                </div> 
+                </form> 
+                </div>
+              
+              <div class="col-lg-4">
+                 <div class="p-4 mb-3 bg-white">
+                    <h3 class="h5 text-black mb-3">servicio tecnico urgente</h3>
+                    <p class="mb-0 font-weight-bold">Teléfono</p>
+                    <p class="mb-4"><a href="#">+34 608182735</a></p>
+                    <p class="mb-0 font-weight-bold">Email</p>
+                    <p class="mb-0"><a href="#">elementsrent@gmail.com</a></p>
+                    <br/> 
+                    <p class="mb-0">
+                       <!-- enviar --> 
+                    <div class="row form-group">
+                       <div class="col-md-12"> <a href="colabora.html"><input type="submit" value="Enviar" class="btn btn-primary pill text-white px-5 py-2"></a> </div>
+                    </div>
+                    </form> <script type="text/javascript"> (function(){ var formulario=document.getElementsByName('formulario')[0], elementos=formulario.elements, boton=document.getElementById('btn'); var validarNombre=function(){ if(formulario.nombre.value == 0){ alert("Completa el campo nombre"); } }; var validarCont=function(){ if(formulario.password.value == 0){ alert("Completa el campo contraseña"); } }; var validarUser=function(){ if(formulario.usuario.value == 0){ alert("Completa el campo usuario"); } }; var validarEmail=function(){ if(formulario.email.value == 0){ alert("Completa el campo email"); } }; var validar=function(){ validarNombre(); validarCont(); validarUser(); validarEmail(); }; formulario.addEventListener("submit", validar); }) </script>  </p> 
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-4">
+             <h3 class="footer-heading mb-4 text-white">About</h3>
+             <p>Tratamos de ofrecer el mejor servicio y mostrar los articulos más actualizados posibles</p>
+          </div>
+          <div class="col-md-6">
+             <div class="row">
+                <div class="col-md-6">
+                   <h3 class="footer-heading mb-4 text-white">Menu</h3>
+                   <ul class="list-unstyled">
+                      <li><a href="preguntas.html">Contacto</a></li>
+                      <li><a href="colabora.html">Nuevo producto</a></li>
+                   </ul>
+                </div>
+                <div class="col-md-6">
+                   <h3 class="footer-heading mb-4 text-white">Categorias</h3>
+                   <ul class="list-unstyled">
+                      <li><a href="https://elpais.com/" target="blank">Electronica</a></li>
+                      <li><a href="https://ec.europa.eu/info/index_es" target="blank">Construccion y obras</a></li>
+                      <li><a href="https://www.elmundo.es/" target="blank">TV, Audio & Imagen</a></li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+          <div class="col-md-2">
+             <div class="col-md-12">
+                <h3 class="footer-heading mb-4 text-white">Redes Sociales</h3>
+             </div>
+             <div class="col-md-12">
+                <p> <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a><a href="#" class="p-2"><span class="icon-twitter"></span></a> <a href="#" class="p-2"><span class="icon-instagram"></span></a> <a href="#" class="p-2"><span class="icon-vimeo"></span></a> </p>
+             </div>
+          </div>
+       </div>
+       <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+             <p> Copyright &copy; All Rights Reserved | ElementsRent </p>
+          </div>
+       </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
