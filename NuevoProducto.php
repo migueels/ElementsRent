@@ -1,34 +1,34 @@
 <?php
 
-include "Conexion.php";
+include("Conexion.php");
 session_start();
 
-        
-if(!isset($_SESSION['idUser'])){ //esto es para comporbar que tiene sesion iniciada
+$_USER = $_SESSION['nombreuser'];
+if(!isset($_USER)){ //esto es para comporbar que tiene sesion iniciada
     header("Location: login.php"); //si no esta logueado al acceder al index redirecciona a login
 }
+
+
+if(isset($_POST['upload'])){
+
         
+        $nombreProducto = $_POST['nombreProducto'];
+        $descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+        $categoria = $_POST['categoria'];
+        $imagen =   addslashes(file_get_contents($_FILES["imagen"]["tmp_name"]));
+        $idUser = $_ID['idUser'];
 
-if(isset($_POST['btnupload'])){
+        $sqladd = "INSERT INTO productos (nombreProducto,descripcion, precio, categoria, fechaAdd,idUser, imagen) values ('$nombreProducto','$descripcion','$precio','$categoria',NOW(),'$idUser','$imagen')";
 
-    $nombreProducto = $_POST['nombreProducto'];
-    $descripcion = $_POST['descripcion'];
-    $precio = $_POST['precio'];
-    $categoria = $_POST['categoria'];
-    $imagen =   addslashes(file_get_contents($_FILES["imagen"]["tmp_name"]));
-    $idUser = $_SESSION['idUser'];
+        if(mysqli_query($conn,$sqladd)){
+            echo "<script> alert('Prducto registrado: $nombreProducto'); window.location='index2.php' </script>";
+        }else{
+            echo "ERROR".$sql."<br>".mysql_error($conn);
+        } 
+}  
 
-    $sqladd = "INSERT INTO productos (nombreProducto,descripcion, precio, categoria, fechaAdd,idUser, imagen) values ('$nombreProducto','$descripcion','$precio','$categoria',NOW(),'$idUser','$imagen')";
-
-    if(mysqli_query($conn,$sqladd)){
-        echo "<script> alert('Prducto registrado: $nombreProducto'); window.location='index2.php' </script>";
-    }else{
-        echo "ERROR".$sql."<br>".mysql_error($conn);
-    }        
-}       
-
-
-
+        
 ?>
 
 
@@ -166,18 +166,19 @@ input[type="password"]{
         <div class="container">
             <div class="navbar">
                 <div class="logo">
+                    <h1></h1>
                     <img src="img/logo.png" width="100.px">
                 </div>
                 <nav>
                     <ul>
-                     <li><a href="#myPage">Inicio</a></li>
+                     <li><a href="index2.php">Inicio</a></li>
                      <li class="dropdown">
                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias
                          <span class="caret"></span></a>
                          <ul class="dropdown-menu">
-                           <li><a href="#">Eletronica</a></li>
-                           <li><a href="#">Contrucción y obras</a></li>
-                           <li><a href="#">TV, Audio & Imagen</a></li> 
+                            <li><a href="Electronica.php">Eletronica</a></li>
+                           <li><a href="Construccion.html">Contrucción y obras</a></li>
+                           <li><a href="TV_Audio.html">TV, Audio & Imagen</a></li> 
                          </ul>
                        </li>
                      <li><a href="Contacto.html">Contacto</a></li>
@@ -221,7 +222,7 @@ input[type="password"]{
                   <p>nombres categorias</p>
                   <div class="input-container">
                       
-                      <input type = "text" placeholder="Categoria" name="categoria">
+                      <input type = "text" placeholder="Categoria" name="Electronica, TV, Audio & Imagen, Construccion & Obras">
                   </div>
           
                   <div class="input-container">
@@ -251,9 +252,9 @@ input[type="password"]{
               
           
                   <!--boton submit de inicio login-->
-                  <input type = "submit" value="upload" class="button" name="btnupload">
+                  <input type = "submit" value="upload" class="button" name="upload">
                   <br>
-                  <p>Cancelar upload<a class="link" href="index2.php">Login </a></p>
+                  <p>Cancelar upload<a class="link" href="index2.php">Cancelar </a></p>
                   
 
           

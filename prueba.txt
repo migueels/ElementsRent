@@ -1,0 +1,22 @@
+<div class="small-container">
+       <h2 class="title">titulo</h2>
+       <div class="row">
+           <?php foreach($_ID as $row) { ?>
+           <div class="col-4">
+               <?php 
+               
+               $id = $_ID['idProducto'];
+               $categoria = $_ID['categoria'];
+               $imagen = "imagen/". $categoria. "/" .$id. "foto.jpg";
+               
+               ?>
+               <img src="<?php echo $imagen ?>">
+               <h4><?php echo $_ID['nombreProducto'] ?></h4>
+               <div class="ratin">
+                   <i class="fa fa-star"></i>
+                </div>
+                <p><?php echo $_ID['precio']?></p>
+           </div>
+           <?php } ?>
+       </div>
+   </div>

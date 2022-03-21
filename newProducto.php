@@ -1,11 +1,11 @@
 
 <?php
 
-include "Conexion.php";
+include("Conexion.php");
 session_start();
 
         
-if(!isset($_SESSION['idUser'])){ //esto es para comporbar que tiene sesion iniciada
+if(!isset($_SESSION['nombreUser'])){ //esto es para comporbar que tiene sesion iniciada
     header("Location: login.php"); //si no esta logueado al acceder al index redirecciona a login
 }
         

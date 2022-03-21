@@ -7,6 +7,10 @@ if(!isset($_SESSION['nombreuser'])){ //esto es para comporbar que tiene sesion i
     header("Location: login.php"); //si no esta logueado al acceder al index redirecciona a login
 }
 
+//$sql = "SELECT * FROM productos WHERE categoria = 'Electronica' ";
+//$query = mysqli_query($conn,$sql);
+//$_ID = mysqli_fetch_assoc($query);
+
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +21,12 @@ if(!isset($_SESSION['nombreuser'])){ //esto es para comporbar que tiene sesion i
     <!--<link rel = "stylesheet" href="style.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css_carrito/styles.css" rel="stylesheet" />
+    <link href="css_carrito/estilos.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <style>
 
 *{
@@ -90,6 +98,58 @@ p{
     padding: 8px 30px;
     margin: 30px 0px;
     border-radius: 30px;
+}
+
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.small-container .card{
+    width: 275px;
+    height: auto;
+    border-radius:8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    float: left;
+}
+
+.small-container .card:hover{
+    transform: translate(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.small-container img{
+    width: 330px;
+    height: 220px;
+}
+
+
+
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px; 
+
+}
+
+.col-4 img{
+    width: 50%;
+}
+
+.title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555
+
 }
 
 .small-container-one{
@@ -184,10 +244,11 @@ color:rgba(20, 1, 1, 0.3);
   margin-bottom:10px;
 }
 
+
 </style>
 </head>
 <body>
-
+    <a href="carrito.php" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a>
     <div class="header">
 
         <div class="container">
@@ -202,16 +263,16 @@ color:rgba(20, 1, 1, 0.3);
                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias
                          <span class="caret"></span></a>
                          <ul class="dropdown-menu">
-                           <li><a href="#">Eletronica</a></li>
-                           <li><a href="#">Contrucción y obras</a></li>
-                           <li><a href="#">TV, Audio & Imagen</a></li> 
+                           <li><a href="Electronica.php">Eletronica</a></li>
+                           <li><a href="Construccion.html">Contrucción y obras</a></li>
+                           <li><a href="TV_Audio.html">TV, Audio & Imagen</a></li> 
                          </ul>
                        </li>
                      <li><a href="Contacto.html">Contacto</a></li>
                      <li><a href="NuevoProducto.php">+ Producto</a></li>
         
                      
-                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart logo-small"></span></a></li>
+                     <li><a href="carrito.php"><span class="glyphicon glyphicon-shopping-cart logo-small"></span></a></li>
                      <li class="dropdown">
                          
                          <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user logoo-small"></span></a>
@@ -249,49 +310,71 @@ color:rgba(20, 1, 1, 0.3);
     <!-- CONTAINER NOSOTROS INFO-->
     <div class="categories">
         <div id="nosotros" class="small-container-one">
-            <h3>ELEMENTs RENT</h3>
+            <h1>ELEMENTs RENT</h1>
             <p><em>la plataforma de alquileres de confianza</em></p>
             <br>
             <div class="row">
               <div class="col-3">
-                <p class="text-center"><strong>¿QUIENES SOMOS?</strong></p><br>
+                <h2 class="text-center"><strong>¿QUIENES SOMOS?</strong></h2><br>
                 <a href="#demo" data-toggle="collapse">
                   <img src="img/quienesomos.png" alt="icono quien somos" alt="Random Name">
                   
                 </a>
-              <p>ElementsRent es una empresa creada con capital español en 2019. Sus fundadores son grandes expertos en el sector de las ventas de segunda mano.</p>
+              <h3>ElementsRent es una empresa creada con capital español en 2019. Sus fundadores son grandes expertos en el sector de las ventas de segunda mano.</h3>
               </div>
               <div class="col-3">
-                <p class="text-center"><strong>OBJETIVO</strong></p><br>
+                <h2 class="text-center"><strong>OBJETIVO</strong></h2><br>
                 <a href="#demo2" data-toggle="collapse">
                   <img src="img/quehacemos.png" alt="icono que hacemos" alt="Random Name" >
                 </a>
-                <p>En ElementsRent queremos ayudar a los clientes a encontrar objetos que quieren utilizar en algun momento de su vida,y pueda utilizarlo en el momento que lo necesiten.</p>
+                <h3>En ElementsRent queremos ayudar a los clientes a encontrar objetos que quieren utilizar en algun momento de su vida,y pueda utilizarlo en el momento que lo necesiten.</h3>
                 
               </div>
               <div class="col-3">
-                <p class="text-center"><strong>¿DÓNDE ESTAMOS?</strong></p><br>
+                <h2 class="text-center"><strong>¿DÓNDE ESTAMOS?</strong></h2><br>
                 <a href="#demo3" data-toggle="collapse">
                   <img src="img/localizacion.jpg" alt="icono localizacion" alt="Random Name" >
                 </a>
-                <p>Nuestra sede de trabajo se encuentra ubicada en Pozuelo de Alarcón,Madrid</p>
+                <h3>Nuestra sede de trabajo se encuentra ubicada en Pozuelo de Alarcón,Madrid</h3>
               </div>
             </div>
           </div>
     </div>
 
 
-    <!--CONTAINER PARA MOSTRAR LOS ARTICULOS RECIEN AÑADIDOS-->
-    <!-- selec from cuando el date sea menos a 2 dias -->
-    <div class="small-container">
-        <h2>Productos recientes</h2>
-        <div class="row">
-            <div class="col-4">
-                <!--aqui va la imagen -->
-                <!-- y la informacion cogida por un select de php-->
+    
+        <!--CONTAINER PARA MOSTRAR LOS ARTICULOS RECIEN AÑADIDOS-->
+        <!-- selec from cuando el date sea menos a 2 dias -->
+        
+   
+   <div class="small-container">
+       <h1 class="title">Recientes</h1>
+       <?php
+        $query = "SELECT * FROM productos WHERE fechaAdd < '2022-03-22'";
+        $resultado = $conn->query($query);
+        while($row = $resultado->fetch_assoc()){
+            ?>
+
+            <div class="card">
+                <img src = "data:imagen/jpg;base64, <?php echo base64_encode($row['imagen']); ?>">
+                <h4><?php echo $row['nombreProducto']; ?></h4>
+                <h4><?php echo $row['precio']; ?>€</h4>
+                
+
+
             </div>
-        </div>
-    </div>
+
+        <?php
+
+        }
+        ?>
+       
+       
+   </div>
+
+   <br>
+   <br>
+   <br>
     
 
 
